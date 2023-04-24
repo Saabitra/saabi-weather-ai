@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("d:\DOWNLOADS\EDGE downloads\sf-pro-display-cufonfonts");
+}
+

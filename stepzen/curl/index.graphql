@@ -1,0 +1,96 @@
+type CurrentWeather {
+  is_day: Int
+  temperature: Float
+  time: String
+  weathercode: Int
+  winddirection: Int
+  windspeed: Float
+}
+type Daily {
+  apparent_temperature_max: [Float]
+  apparent_temperature_min: [Float]
+  precipitation_probability_max: [Int]
+  precipitation_sum: [Float]
+  rain_sum: [Int]
+  sunrise: [String]
+  sunset: [String]
+  temperature_2m_max: [Float]
+  temperature_2m_min: [Float]
+  time: [Date]
+  uv_index_clear_sky_max: [Float]
+  uv_index_max: [Float]
+  weathercode: [Int]
+  windspeed_10m_max: [Float]
+}
+type DailyUnits {
+  apparent_temperature_max: String
+  apparent_temperature_min: String
+  precipitation_probability_max: String
+  precipitation_sum: String
+  rain_sum: String
+  sunrise: String
+  sunset: String
+  temperature_2m_max: String
+  temperature_2m_min: String
+  time: String
+  uv_index_clear_sky_max: String
+  uv_index_max: String
+  weathercode: String
+  windspeed_10m_max: String
+}
+type Hourly {
+  apparent_temperature: [Float]
+  dewpoint_2m: [Float]
+  is_day: [Int]
+  precipitation: [Float]
+  precipitation_probability: [Int]
+  pressure_msl: [Float]
+  relativehumidity_2m: [Int]
+  temperature_2m: [Float]
+  time: [String]
+  uv_index: [Float]
+  uv_index_clear_sky: [Float]
+  weathercode: [Int]
+  windspeed_10m: [Float]
+}
+type HourlyUnits {
+  apparent_temperature: String
+  dewpoint_2m: String
+  is_day: String
+  precipitation: String
+  precipitation_probability: String
+  pressure_msl: String
+  relativehumidity_2m: String
+  temperature_2m: String
+  time: String
+  uv_index: String
+  uv_index_clear_sky: String
+  weathercode: String
+  windspeed_10m: String
+}
+type Root {
+  current_weather: CurrentWeather
+  daily: Daily
+  daily_units: DailyUnits
+  elevation: Int
+  generationtime_ms: Float
+  hourly: Hourly
+  hourly_units: HourlyUnits
+  latitude: Float
+  longitude: Float
+  timezone: String
+  timezone_abbreviation: String
+  utc_offset_seconds: Int
+}
+
+type Query {
+  myQuery(
+    current_weather: String
+    daily: String
+    hourly: String
+    latitude: String
+    longitude: String
+    models: String
+    timezone: String
+  ): Root @rest(endpoint: "https://api.open-meteo.com/v1/forecast?latitude=22.56&longitude=88.36&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,precipitation_probability,precipitation,weathercode,pressure_msl,windspeed_10m,uv_index,uv_index_clear_sky,is_day&models=best_match&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,uv_index_max,uv_index_clear_sky_max,precipitation_sum,rain_sum,precipitation_probability_max,windspeed_10m_max&current_weather=true&timezone=auto")
+}
