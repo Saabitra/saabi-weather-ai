@@ -51,7 +51,7 @@ function InformationPanel({ city, lat, long, results }: Props) {
 
       <hr className="mt-10 mb-5" />
 
-      <div className="flex items-center justify-end pb-5">
+      <div className="flex items-center justify-between pb-5">
         <div>
           <Image
             src={`https://www.weatherbit.io/static/img/icons/${
@@ -62,7 +62,7 @@ function InformationPanel({ city, lat, long, results }: Props) {
             height={75}
           />
 
-          <div className="flex items-center space-x-10 justify-end">
+          <div className="flex items-center space-x-10 justify-between">
             <p className="text-6xl font-semibold">
               {results.current_weather.temperature.toFixed(1)}°C
             </p>

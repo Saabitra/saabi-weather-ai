@@ -9,7 +9,7 @@ export default function Home() {
       <Card className="shadow-lg max-w-4xl mx-auto bg-gradient-to-b from-[#1cd8d2]/50 to-[#93edc7]/20 rounded-xl">
         <Text className="text-5xl font-semibold text-center mb-5">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f56772]/70 to-[#7280ff]/80 drop-shadow-lg dropshadow-md">
-            SAABI Weather-AI
+            Weather-AI Reporter
           </span>
         </Text>
         <Subtitle className="text-xl text-center">
